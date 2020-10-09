@@ -11,14 +11,14 @@ import Character from './components/Character'
 // sync up with, if any.
 
 const App = () => {
-  const [StarData, setStarData] = useState([])
+  const [starData, setStarData] = useState([])
 
   useEffect(() => {
     const fetchStarData = () => {
       axios.get(`https://swapi.dev/api/people/`)
         .then(res => {
           setStarData(res.data.results)
-          console.log("fetchStarData -> res.data.results", res.data.results)
+          //console.log("fetchStarData -> res.data.results", res.data.results)
         })
         .catch(err => {
           debugger
@@ -26,13 +26,16 @@ const App = () => {
     }
     fetchStarData()
   }, [])
-  console.log('StarData', StarData)
-
+  console.log('starData', starData)
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <Character />
+      {
+        starData.map(ch => {
+          return <Character info={ch} key={ch.name} />
+        })
+      }
     </div>
   );
 }
