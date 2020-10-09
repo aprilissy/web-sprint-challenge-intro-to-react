@@ -5,8 +5,10 @@ import Character from './components/Character'
 import styled from 'styled-components'
 
 const StyledHeader = styled.div`
-  margin:3% 3%;
-  padding:1% 40%;
+  margin:2% 35%;
+  padding:1% 3% 3%;
+  border:1px solid black;
+  background-color:rgba(224,224,224,0.3);
 `
 
 // Try to think through what state you'll need for this app before starting. Then build out
