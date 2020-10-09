@@ -33,7 +33,7 @@ const App = () => {
       <h1 className="Header">Characters</h1>
       {
         starData.map(ch => {
-          return <Character info={ch} key={ch.name} />
+          return <Character info={ch} key={ch.name}></Character>
         })
       }
     </div>
