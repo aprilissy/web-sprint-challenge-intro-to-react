@@ -1,6 +1,18 @@
 // Write your Character component here
 import React, { useState } from 'react'
+import styled from 'styled-components'
 
+const StyledCharacters = styled.div`
+  margin:0 3%;
+  h2:hover{
+    background-color:rgba(224,224,224,0.5);
+    color:rgb(64,64,64);
+  }
+  #info {
+    background-color:rgba(224,224,224,0.5);
+    padding:2%;
+  }
+`
 
 function Character(props) {
     const { info } = props
@@ -13,9 +25,9 @@ function Character(props) {
     }
 
     return (
-        <div>
-            <h2 onClick={(toggleInfo)}>{info.name}  +</h2>
-            {chInfo && <div>
+        <StyledCharacters>
+            <h2 onClick={(toggleInfo)}>{info.name}</h2>
+            {chInfo && <div id='info'>
                 <p>Birth Year: {info.birth_year}</p>
                 <p>Gender: {info.gender}</p>
                 <p>Eye Color: {info.eye_color}</p>
@@ -24,7 +36,7 @@ function Character(props) {
                 <p>Mass: {info.mass}</p>
             </div>}
 
-        </div>
+        </StyledCharacters>
     )
 }
 

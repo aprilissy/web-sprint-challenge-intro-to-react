@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios'
 import Character from './components/Character'
+import styled from 'styled-components'
+
+const StyledHeader = styled.div`
+  margin:3% 3%;
+  padding:1% 20%;
+`
 
 // Try to think through what state you'll need for this app before starting. Then build out
 // the state properties here.
@@ -29,14 +35,14 @@ const App = () => {
   console.log('starData', starData)
 
   return (
-    <div className="App">
+    <StyledHeader className="App">
       <h1 className="Header">Characters</h1>
       {
         starData.map(ch => {
           return <Character info={ch} key={ch.name}></Character>
         })
       }
-    </div>
+    </StyledHeader>
   );
 }
 
