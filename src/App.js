@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.div`
   margin:3% 3%;
-  padding:1% 20%;
+  padding:1% 40%;
 `
 
 // Try to think through what state you'll need for this app before starting. Then build out

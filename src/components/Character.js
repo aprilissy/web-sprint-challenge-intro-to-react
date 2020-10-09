@@ -4,8 +4,12 @@ import styled from 'styled-components'
 
 const StyledCharacters = styled.div`
   margin:0 3%;
+  background-color:rgba(224,224,224,0.5);
+h2{
+    padding:2%;
+    border:1px solid black;
+}
   h2:hover{
-    background-color:rgba(224,224,224,0.5);
     color:rgb(64,64,64);
   }
   #info {
