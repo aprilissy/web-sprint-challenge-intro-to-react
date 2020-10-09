@@ -20,6 +20,9 @@ h2{
       font-weight:bold;
       text-transform: capitalize;
   }
+  p:first-child, p:last-child{
+    text-transform: none;
+  }
 `
 
 function Character(props) {
@@ -36,12 +39,12 @@ function Character(props) {
         <StyledCharacters>
             <h2 onClick={(toggleInfo)}>{info.name}</h2>
             {chInfo && <div id='info'>
-                <p>Birth Year: {info.birth_year}</p>
+                <p>Birth Year: {info.gender === 'female' ? `What an inappropriate question!` : `${info.birth_year}`}</p>
                 <p>Gender: {info.gender}</p>
                 <p>Eye Color: {info.eye_color}</p>
                 <p>Hair Color: {info.hair_color}</p>
                 <p>Height: {info.height}</p>
-                <p>Mass: {info.mass}</p>
+                <p>Mass: {info.gender === 'female' ? `How rude! Why would you ask me that?` : `${info.mass}`}</p>
             </div>}
 
         </StyledCharacters>
